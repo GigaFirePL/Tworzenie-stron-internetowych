@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Styling</title>
+    <link rel="stylesheet" href="zad2.2b.2.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <!-- Full Name Input -->
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            
+            <!-- Email Input -->
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            
+            <!-- Position Select -->
+            <label for="position">Select Position:</label>
+            <select id="position">
+                <option value="manager">Manager</option>
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+            </select>
+            
+            <!-- Radio Group -->
+            <fieldset class="radio-group">
+                <legend>Availability:</legend>
+                <input type="radio" id="available-now" name="availability" value="now">
+                <label for="available-now">Available Now</label>
+                <input type="radio" id="available-soon" name="availability" value="soon">
+                <label for="available-soon">Available Soon</label>
+            </fieldset>
+            
+            <!-- Message Textarea -->
+            <textarea id="message" placeholder="Write your message here"></textarea>
+            
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

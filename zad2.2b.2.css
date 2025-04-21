@@ -1,0 +1,57 @@
+/* Styling inputs and textarea with pseudo-classes */
+input:first-of-type {
+  font-weight: bold;
+  border: 2px solid blue;
+}
+
+input:focus, textarea:focus {
+  border-color: orange;
+  outline: none;
+}
+
+input:valid, select:valid, textarea:valid {
+  border-color: green;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+  border-color: red;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: lightblue;
+}
+
+/* Radio Button Styles */
+.radio-group input[type="radio"]:checked {
+  border-color: yellow;
+  background-color: lightgray;
+  box-shadow: 0 0 5px yellow;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  color: yellow;
+}
+
+/* Links Appearance */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
+
+a:active {
+  color: red;
+}
+
+a:visited {
+  color: purple;
+}
+
+/* Container Styling */
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+}
