@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Music Festival 2025</title>
+    <link rel="stylesheet" href="zad5.1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="list">☰</div>
+        <ul class="nav-menu">
+            <li><a href="zad5.1.html">Strona główna</a></li>
+            <li><a href="zad5.1.2.html">Line-up</a></li>
+            <li><a href="zad5.1.2.html">Bilety</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Summer Music Festival 2025</h1>
+        <p>13-14 czerwca 2025 • Warszawa</p>
+    </header>
+    <main>
+        <section class="about">
+            <h2>O festiwalu</h2>
+            <p>Największe wydarzenie muzyczne tego lata! Trzy dni niesamowitej muzyki, spotkań i zabawy.</p>
+        </section>
+        <section class="artists-grid">
+            <h2>Występujący artyści</h2>
+            <div class="grid">
+                <div class="artist">
+                    <img src="pobrane.jpg" alt="Artysta 1">
+                    <h3>Artysta 1</h3>
+                </div>
+                <div class="artist">
+                    <img src="pobrane (1).jpg" alt="Artysta 2">
+                    <h3>Artysta 2</h3>
+                </div>
+                <div class="artist">
+                    <img src="pobrane.jpg" alt="Artysta 3">
+                    <h3>Artysta 3</h3>
+                </div>
+                <div class="artist">
+                    <img src="pobrane (1).jpg" alt="Artysta 4">
+                    <h3>Artysta 4</h3>
+                </div>
+            </div>
+        </section>
+        <section class="schedule">
+            <h2>Program festiwalu</h2>
+            <div class="schedule-wrapper">
+                <table>
+                    <tr>
+                        <th>Dzień</th>
+                        <th>Godzina</th>
+                        <th>Wykonawca</th>
+                        <th>Scena</th>
+                    </tr>
+                    <tr>
+                        <td>15.08</td>
+                        <td>20:00</td>
+                        <td>Artysta 1</td>
+                        <td>Główna</td>
+                    </tr>
+                    <tr>
+                        <td>16.08</td>
+                        <td>19:00</td>
+                        <td>Artysta 2</td>
+                        <td>Alternatywna</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="contact">
+            <h2>Kontakt</h2>
+            <form>
+                <input type="text" placeholder="Imię i nazwisko" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Wiadomość" required></textarea>
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2137 Summer Music Festival. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.querySelector('.list').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

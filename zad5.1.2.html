@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line-up - Summer Music Festival 2025</title>
+    <link rel="stylesheet" href="zad5.1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="list">☰</div>
+        <ul class="nav-menu">
+            <li><a href="zad5.1.html">Strona główna</a></li>
+            <li><a href="zad5.1.2.html">Line-up</a></li>
+            <li><a href="zad5.1.3.html">Bilety</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Line-up</h1>
+        <p>Lista wykonawców Summer Music Festival 2025</p>
+    </header>
+    <main>
+        <section class="lineup-days">
+            <h2>Dzień 1 - 13 czerwca</h2>
+            <div class="lineup-grid">
+                <div class="performer">
+                    <h3>20:00 - Scena Główna</h3>
+                    <h4>Artysta 1</h4>
+                    <p>Headliner pierwszego dnia</p>
+                </div>
+                <div class="performer">
+                    <h3>18:00 - Scena Alternatywna</h3>
+                    <h4>Artysta 2</h4>
+                    <p>Energetyczny występ</p>
+                </div>
+            </div>
+            <h2>Dzień 2 - 14 czerwca</h2>
+            <div class="lineup-grid">
+                <div class="performer">
+                    <h3>20:00 - Scena Główna</h3>
+                    <h4>Artysta 3</h4>
+                    <p>Gwiazda wieczoru</p>
+                </div>
+                <div class="performer">
+                    <h3>18:00 - Scena Alternatywna</h3>
+                    <h4>Artysta 4</h4>
+                    <p>Wyjątkowy show</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Summer Music Festival. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.querySelector('.list').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

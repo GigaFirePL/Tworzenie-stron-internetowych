@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilety - Summer Music Festival 2025</title>
+    <link rel="stylesheet" href="zad5.1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="list">☰</div>
+        <ul class="nav-menu">
+            <li><a href="zad5.1.html">Strona główna</a></li>
+            <li><a href="zad5.1.2.html">Line-up</a></li>
+            <li><a href="zad5.1.3.html">Bilety</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Bilety</h1>
+        <p>Wybierz odpowiedni bilet dla siebie</p>
+    </header>
+    <main>
+        <section class="tickets">
+            <div class="grid">
+                <div class="ticket-option">
+                    <h3>Karnet 2-dniowy</h3>
+                    <p class="price">299 PLN</p>
+                    <ul>
+                        <li>Wstęp na wszystkie koncerty</li>
+                        <li>Dostęp do strefy gastronomicznej</li>
+                        <li>Parking gratis</li>
+                    </ul>
+                    <button>Kup teraz</button>
+                </div>
+                <div class="ticket-option">
+                    <h3>Bilet jednodniowy</h3>
+                    <p class="price">179 PLN</p>
+                    <ul>
+                        <li>Wstęp na jeden dzień</li>
+                        <li>Dostęp do strefy gastronomicznej</li>
+                    </ul>
+                    <button>Kup teraz</button>
+                </div>
+            </div>
+        </section>
+        <section class="ticket-info">
+            <h2>Informacje o biletach</h2>
+            <div class="info-grid">
+                <div>
+                    <h3>Gdzie odebrać?</h3>
+                    <p>Bilety możesz odebrać w kasie przy wejściu lub wydrukować w domu.</p>
+                </div>
+                <div>
+                    <h3>Metody płatności</h3>
+                    <p>Akceptujemy płatności kartą i przelewem online.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Summer Music Festival. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        document.querySelector('.list').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

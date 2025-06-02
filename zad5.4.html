@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktywna Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="zad5.4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inputs-container">
+            <div class="input-group">
+                <input type="text" id="lat" placeholder="Szerokość (np. 52.2297)">
+                <input type="text" id="lng" placeholder="Długość (np. 21.0122)">
+                <input type="text" id="popupText" placeholder="Tekst w popup">
+                <input type="text" id="buttonText" placeholder="Tekst na przycisku">
+                <input type="text" id="markerColor" placeholder="Kolor markera (np. #ff0000)">
+                <button id="addMarker">Dodaj marker</button>
+            </div>
+            <div id="coordinates">Kliknij na mapę, aby skopiować współrzędne</div>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Inicjalizacja mapy
+        const map = L.map('map').setView([52.2297, 21.0122], 13);
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Domyślne markery
+        const markers = [
+            { lat: 52.2297, lng: 21.0122, popup: 'Warszawa Centrum', button: 'Więcej info' },
+            { lat: 52.2200, lng: 21.0100, popup: 'Punkt 2', button: 'Szczegóły' },
+            { lat: 52.2400, lng: 21.0200, popup: 'Punkt 3', button: 'Informacje' }
+        ];
+
+        // Funkcja dodająca marker z popupem i przyciskiem
+        function addCustomMarker(lat, lng, popupText, buttonText, color = 'red') {
+            const marker = L.marker([lat, lng]).addTo(map);
+            const popupContent = `
+                <div class="custom-popup">
+                    <p>${popupText}</p>
+                    <button class="popup-button">${buttonText}</button>
+                </div>
+            `;
+            const popup = marker.bindPopup(popupContent).openPopup();
+        }
+
+        // Dodawanie domyślnych markerów
+        markers.forEach(marker => {
+            addCustomMarker(marker.lat, marker.lng, marker.popup, marker.button);
+        });
+
+        // Dodawanie polygonu
+        const polygon = L.polygon([
+            [52.2297, 21.0122],
+            [52.2200, 21.0100],
+            [52.2400, 21.0200]
+        ], {
+            color: 'blue',
+            fillColor: '#3388ff',
+            fillOpacity: 0.2
+        }).addTo(map);
+
+        // Hover effect dla polygonu
+        polygon.on('mouseover', function() {
+            this.setStyle({
+                fillColor: '#ff3388',
+                fillOpacity: 0.5
+            });
+        });
+
+        polygon.on('mouseout', function() {
+            this.setStyle({
+                fillColor: '#3388ff',
+                fillOpacity: 0.2
+            });
+        });
+
+        // Kopiowanie współrzędnych po kliknięciu
+        map.on('click', function(e) {
+            const coords = `${e.latlng.lat.toFixed(4)}, ${e.latlng.lng.toFixed(4)}`;
+            navigator.clipboard.writeText(coords).then(() => {
+                document.getElementById('coordinates').textContent = `Skopiowano: ${coords}`;
+            });
+        });
+
+        // Dodawanie nowych markerów z formularza
+        document.getElementById('addMarker').addEventListener('click', function() {
+            const lat = document.getElementById('lat').value;
+            const lng = document.getElementById('lng').value;
+            const popupText = document.getElementById('popupText').value;
+            const buttonText = document.getElementById('buttonText').value;
+            const markerColor = document.getElementById('markerColor').value;
+
+            // Walidacja
+            if (!isValidCoordinate(lat, lng) || !popupText || !buttonText) {
+                alert('Wprowadź poprawne dane! Szerokość: -90 do 90, Długość: -180 do 180');
+                return;
+            }
+
+            addCustomMarker(parseFloat(lat), parseFloat(lng), popupText, buttonText, markerColor);
+        });
+
+        // Funkcja walidująca współrzędne
+        function isValidCoordinate(lat, lng) {
+            const latNum = parseFloat(lat);
+            const lngNum = parseFloat(lng);
+            return !isNaN(latNum) && !isNaN(lngNum) && 
+                   latNum >= -90 && latNum <= 90 && 
+                   lngNum >= -180 && lngNum <= 180;
+        }
+    </script>
+</body>
+</html>
