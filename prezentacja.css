@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Podstawowe style dla całej strony */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Style dla górnego paska nawigacji */
+/* Pasek jest przypięty do góry strony i zawsze widoczny */
+.navbar {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100; /* Zapewnia, że navbar będzie zawsze na wierzchu */
+}
+
+/* Lista linków w pasku nawigacji */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+/* Style dla pojedynczych linków w nawigacji */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+/* Efekt najechania na link w nawigacji */
+.nav-links a:hover {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* Główny kontener strony */
+/* Odsunięty od góry o wysokość navbara */
+.container {
+    display: flex;
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+}
+
+/* Style dla bocznego menu */
+/* Domyślnie schowane poza ekranem (left: -250px) */
+.sidebar {
+    width: 250px;
+    background: #f4f4f4;
+    padding: 1rem;
+    position: fixed;
+    height: calc(100vh - 60px);
+    left: -250px; /* Ukrycie sidebara poza ekranem */
+    transition: left 0.4s ease; /* Płynna animacja wysuwania */
+}
+
+/* Nagłówek w bocznym menu */
+.sidebar h3 {
+    margin-bottom: 1rem;
+}
+
+/* Lista w bocznym menu */
+.sidebar ul {
+    list-style: none;
+}
+
+/* Linki w bocznym menu */
+.sidebar a {
+    display: block;
+    padding: 0.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Efekt najechania na link w bocznym menu */
+.sidebar a:hover {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+/* Obszar wyzwalający wysunięcie bocznego menu */
+.sidebar-trigger {
+    position: fixed;
+    top: 60px;
+    width: 30px;
+    height: 100vh;
+    background: transparent;
+}
+
+/* Pokazywanie sidebara po najechaniu na trigger lub sam sidebar */
+.sidebar-trigger:hover + .sidebar,
+.sidebar:hover {
+    left: 0;
+}
+
+/* Style dla głównej treści strony */
+.content {
+    flex: 1;
+    padding: 1rem;
+    margin-left: 20px; /* Miejsce na trigger sidebara */
+    transition: margin-left 0.4s ease; /* Płynne przesuwanie treści */
+}
+
+/* Przesunięcie treści gdy sidebar jest widoczny */
+.sidebar-trigger:hover ~ .content,
+.sidebar:hover ~ .content {
+    margin-left: 250px;
+}
+
+/* Style dla akordeonu */
+.accordion {
+    max-width: 600px;
+    margin: 2rem 0;
+}
+
+/* Pojedynczy element akordeonu */
+.accordion-item {
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Ukrycie checkboxa kontrolującego akordeon */
+.accordion-item input {
+    display: none;
+}
+
+/* Etykieta (nagłówek) elementu akordeonu */
+.accordion-item label {
+    display: block;
+    padding: 1rem;
+    background: #f4f4f4;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Znak plus przy etykiecie akordeonu */
+.accordion-item label::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.4s;
+}
+
+/* Treść elementu akordeonu */
+/* Domyślnie zwinięta (max-height: 0) */
+.accordion-item .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    padding: 0 1rem;
+}
+
+/* Rozwinięcie treści po zaznaczeniu checkboxa */
+.accordion-item input:checked ~ .content {
+    max-height: 100vh;
+    padding: 1rem;
+}
+
+/* Obrót znaku plus gdy akordeon jest otwarty */
+.accordion-item input:checked ~ label::after {
+    transform: rotate(45deg);
+}
