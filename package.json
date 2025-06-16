@@ -1,0 +1,18 @@
+{
+  "name": "tworzenie-stron-internetowych",
+  "version": "1.0.0",
+  "main": "zad6.1a.js",
+  "type": "module",
+  "scripts": {
+    "start": "node zad6.1a.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "kolorki w konsoli",
+  "dependencies": {
+    "@koa/router": "^13.1.0",
+    "chalk": "^5.4.1",
+    "koa": "^3.0.0"
+  }
+}

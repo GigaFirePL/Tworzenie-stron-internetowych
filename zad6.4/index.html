@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogoda w Poznaniu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .weather-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            color: #2196F3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-card">
+        <h1>Pogoda w Poznaniu</h1>
+        <p>Temperatura: {{temperature}}°C</p>
+        <p>Prędkość wiatru: {{windSpeed}} km/h</p>
+        <p>Status: <span class="message">{{tempMessage}}</span></p>
+    </div>
+    <div class="weather-card">
+        <h2>Prognoza na jutro</h2>
+        <p class="message">{{tomorrowMessage}}</p>
+    </div>
+</body>
+</html>
